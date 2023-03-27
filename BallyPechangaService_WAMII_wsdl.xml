@@ -1,0 +1,3786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddPrize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prize" type="tns:PrizeDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PrizeDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrizeCategory" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AuthAward" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AwardUsed" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateStart" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateEnd" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEBS" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EBSPrizeFlag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsComp" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRedeem" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsKiosk" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTicket" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVoucher" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVirtual" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCoupon" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPromo" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPromo2" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNonDisplay" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPromoPrize" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsIVip" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTable" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LinkPrizeId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrizeLevel" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVoucherReportNameAlt" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsFlexiPromo" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AwardCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsRedeem" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsGame" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsBase" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsBonus" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsAdjDr" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsAdjCr" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsMultiplier" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PromoRedeem" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PromoBase" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PromoBonus" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PromoAdjDr" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PromoAdjCr" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PromoMultiplier" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promo2Redeem" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promo2Base" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promo2Bonus" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promo2AdjDr" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promo2AdjCr" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promo2Multiplier" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TktsRedeem" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TktsBase" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TktsBonus" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TktsAdjDr" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TktsAdjCr" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TktsMultiplier" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRefundUnusedAuthAward" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAutoSettle" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSettleNotZeroAwardUsed" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCtrCashPrize" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAllowDifAuthAward" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAllowSameAuthAward" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAllowDifAwardUsed" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAllowSameAwardUsed" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShippingWeight" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShippingWeightUnits" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtyOnHand" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtyOnOrder" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtyReorder" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtyReserve" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vendor1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vendor2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitCost" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsChkInventory" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MsgIdVoucher" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVoucherSig1" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="VoucherSig1" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVoucherSig2" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="VoucherSig2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVoucherSig3" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="VoucherSig3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinVoucherRedeemPts" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsHideAuthAward" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVoucherMailingAddress" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPromotionMessage" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MsgIdPromotion" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPrizeClubState" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrizeClubState" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinPrizeClubState" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxPrizeClubState" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAttachTag" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AttachTagId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttachTagCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDetachTag" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DetachTagId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetachTagCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRequiredTag" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequiredTagId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequiredTagCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMaxPrizesPerTrip" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxPrizesPerTrip" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEarnRequired" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EarnOverDays" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMaxPrizesPerPeriod" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxPrizesPerPeriod" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DaysPerPeriod" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsExceed" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExceedPrizesMax" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExceedPrizesDays" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtyDefault" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DefaultOutletId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultOutletCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InterfaceTranId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="InterfaceTranCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastPlayerId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastTranId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAutoSettleAfterDays" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoSettleAfterDays" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOneTimePrize" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOneVoucherPerPrize" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsFixedQty" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpiryDays" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpireDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSystemUse" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCashBack" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CashAmount" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EarnTypeId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EarnTypeCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EarnAmount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modified" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Owner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalPrizeCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccessLevelId" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddPrizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="prizeId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternalError" type="tns:Error" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePrize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prize" type="tns:PrizeDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePrizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tag" type="tns:TagDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TagDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CascadeTagId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CascadeTagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TagCategoryCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpiresAfterMinutes" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Symbol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SymbolFont" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SymbolFontSize" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SymbolForeColor" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SymbolBackColor" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSystemTag" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDoNotDisplay" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsKiosk" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modified" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalTagCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccessLevelId" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tagId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tag" type="tns:TagDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="tns:GroupDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GroupDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDefault" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NextTripDt" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepAddr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepAddr2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepCity" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupRepStateId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepStateCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupRepCountryId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepCountryCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupRepPostalCodeId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepPostalCodeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepTel1Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepTel1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepTel2Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRepTel2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSystemUse" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupTypeId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupTypeCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAddressValidated" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAddressOverriden" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressOverridenReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BatchValidationStatus" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddressValidatedDtm" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsBatchAddressValidated" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BatchAddressCorrectionCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldAddressId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccessLevelId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalGroupCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContractId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettlementId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentGroupId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TheorHoldPc" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsBetByBet" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modified" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="tns:GroupDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroupEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupevent" type="tns:GroupEventDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GroupEventDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Arrival" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Departure" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TagId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TagCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modified" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddGroupEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupEventId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGroupEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupevent" type="tns:GroupEventDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGroupEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRating">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ratingParameter" type="tns:RatingDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RatingDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RatingType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Acct" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TranCodeID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVoid" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GamingDt" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Shift" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgingDt" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PostDtm" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComputerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmpID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AuthEmpId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeptId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CasinoId" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AreaId" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocnId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GameId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DenomId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RepId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOpenItem" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerTypeId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OriginalPlayerId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RelatedTranId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="VoidTranId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Flags" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDistributed" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldRelatedTranId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="StratId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RatingStartDtm" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RatingEndDtm" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CashBuyIn" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditBuyIn" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChipBuyIn" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PromoBuyIn" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ECreditBuyIn" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ECashBuyIn" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RatingPeriodMinutes" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Plays" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Bet" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaidOut" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="WalkedWith" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TheorHoldPc" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TheorWin" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="GamePts" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CasinoWinCalcMethod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CasinoWin" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="HighBet" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="MgmtRating" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocnMinBet" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocnMaxBet" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CasinoStatistic" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeatNo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FreqId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdjBet" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdjPaidOut" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdjTheorWin" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdjCasinoWin" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualRatingStartTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualRatingEndTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TripDt" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TripId" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TripType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowedPurgeDt" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="VIPPlayerID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BetByBet" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsBetByBet" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AverageBet" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SessionPoints" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddToPartialPts" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddToPartialPts2" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddToPartialStubs" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddToPartialStubs2" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="QualPts" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BasePts" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BonusPts" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EarnedComp" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseStubs" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BonusStubs" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EarnedAltComp" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promo1" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BonusPromo1" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promo2" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BonusPromo2" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modified" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalTagCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccessLevelId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCloseRating" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettleTranId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Jackpot" nillable="true" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddRatingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRating">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ratingParameter" type="tns:RatingDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRatingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerMemo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memo" type="tns:PlayerMemoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerMemoDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TranCodeId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranCodeCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GamingDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PostDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Shift" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComputerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AuthEmployeeId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartmentId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CasinoId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AreaId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocationId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Document" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriorityId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOpen" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpireDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPublic" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVoid" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="VoidEmployeeId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VoidGamingDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="VoidShift" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VoidRef1" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modified" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataRowVersion" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccessLevelId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsChildAccess" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddPlayerMemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PlayerMemoId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BanPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="banPlayerDTO" type="tns:BanPlayerDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BanPlayerDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Acct" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BanRemarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BanReasonCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BanPlAllowEarnAward" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BanPlAllowUseAward" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BanPlAllowUseCreditLimit" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BanPlAllowPlay" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BanExpiryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReleaseBan" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BanPlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeAwardAdjust">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AwardType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Outlet" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeAwardAdjustResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TranID" nillable="true" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePlayerPIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerid" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePlayerPINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" nillable="true" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerTypeCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerTypeId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerNote" type="tns:PlayerNote" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerNote">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriorityCode" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isVoid" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isOpen" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isPublic" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isExpired" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpirationDt" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="modified" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePlayerNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddressTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddressTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfAddressType" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAddressType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AddressType" nillable="true" type="tns:AddressType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddressType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPhoneTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhoneTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPhoneType" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPhoneType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PhoneType" nillable="true" type="tns:PhoneType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PhoneType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEmailTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfEmailType" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmailType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmailType" nillable="true" type="tns:EmailType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmailType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPictureTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPictureTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfWSPictureType" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWSPictureType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSPictureType" nillable="true" type="tns:WSPictureType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSPictureType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerBalances">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerBalancesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfWSDictionaryItemOfStringDouble" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWSDictionaryItemOfStringDouble">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSDictionaryItemOfStringDouble" nillable="true" type="tns:WSDictionaryItemOfStringDouble" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSDictionaryItemOfStringDouble">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="value" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupPrefix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EventValidDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isTodayEvent" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="showActiveEvents" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPlayerEvent" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayerEvent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerEvent" nillable="true" type="tns:PlayerEvent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerEvent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EventIsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EventArrival" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EventDeparture" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventTagCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="modified" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerTags">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tagCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tagId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerTagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPlayerTag" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayerTag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerTag" nillable="true" type="tns:PlayerTag" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerTag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TagDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TagIsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TagExpire" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="modified" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerHosts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerHostsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfWSDictionaryItemOfInt32PlayerHost" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWSDictionaryItemOfInt32PlayerHost">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSDictionaryItemOfInt32PlayerHost" nillable="true" type="tns:WSDictionaryItemOfInt32PlayerHost" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSDictionaryItemOfInt32PlayerHost">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="key" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="value" type="tns:PlayerHost" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerHost">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmpBadge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpNote" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="modified" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isOpen" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isPublic" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isVoid" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isExpire" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPlayerNote" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayerNote">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerNote" nillable="true" type="tns:PlayerNote" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerPictures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isDefault" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="pictureTypeId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pictureTypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerPicturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPlayerPicture" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayerPicture">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerPicture" nillable="true" type="tns:PlayerPicture" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerPicture">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PictureTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Format" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isDefault" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePlayerPreferences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerPreference" type="tns:PlayerPreference" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerPreference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CitizenCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ethnicity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MailingContactTypeCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNoMail" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReturnMail" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPrivacy" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVip" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCreditAcct" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsBanned" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsInactive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCreditPlayer" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsClubHold" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsWhale" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsHandicap" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSmoker" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePlayerPreferencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerAddress" type="tns:PlayerAddress" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetAdd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isOwn" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isBusiness" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="created" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="modified" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddressValidated" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddressValidatedDtm" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePlayerAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerEmail" type="tns:PlayerEmail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerEmail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEmailSend" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="created" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="modified" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePlayerEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjustPlayerBucketBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bucket" type="tns:eBucketType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="eBucketType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Points" />
+          <s:enumeration value="Comps" />
+          <s:enumeration value="Promo1" />
+          <s:enumeration value="Promo2" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AdjustPlayerBucketBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TranID" nillable="true" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerHost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="empLogin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsPrimaryHost" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerHostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerPhone" type="tns:PlayerPhone" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerPhone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extensions" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isText" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isCall" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePlayerPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerIdentification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerIdentification" type="tns:PlayerIdentification" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerIdentification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Expiration" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Issued" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isValidated" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePlayerIdentificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeRoleCodeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="locnCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="locnId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeRoleCodeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEmployeeRoleCodeListResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleCodes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifyEmployeeLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="locnname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rolecode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keystring" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyEmployeeLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyEmployeeSecurity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empLogin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmpId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="securityCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RoleId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyEmployeeSecurityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" nillable="true" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeEmployeePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeEmployeePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" nillable="true" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfCountry" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCountry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Country">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="States" type="tns:ArrayOfState" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfState">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="State" nillable="true" type="tns:State" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="State">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetClubStates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClubStatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfClubState" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClubState">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClubState" nillable="true" type="tns:ClubState" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClubState">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPlayerTemplate" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayerTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerTemplate" nillable="true" type="tns:PlayerTemplate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerTemplate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Acct" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupCodePrefix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EventValidDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isTodayEvent" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfGroup" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Group">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Events" type="tns:ArrayOfEvent" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEvent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Event" nillable="true" type="tns:Event" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Event">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Arrival" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Departure" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TagCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTags">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tagCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tagId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfWSTag" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWSTag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSTag" nillable="true" type="tns:WSTag" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSTag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpireMinutes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpireDtm" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPrizes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prizeCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="prizeId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="reqTagcode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reqTagId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachedTagcode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="attTagId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="detachTagCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="detachTagId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="validDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isinActive" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrizesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPrize" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPrize">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Prize" nillable="true" type="tns:Prize" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Prize">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttachTagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetachTagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequiredTagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AwardCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EffectiveDtm" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValidThroughDtm" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPlayerType" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayerType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerType" nillable="true" type="tns:PlayerType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLanguages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLanguagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="DLNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DLPrefix" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isWithPictures" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isWithPhones" nillable="true" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isWithEmails" nillable="true" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isWithAddresses" nillable="true" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isWithIdentifications" nillable="true" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdentificationType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardTrackdata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPlayer" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Player" nillable="true" type="tns:Player" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Player">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Acct" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GivenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Suffix" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClubState" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeddingDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MgmtRating" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Marital" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="height" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="eyes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hair" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Gender" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isPINLocked" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isBanned" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isCredit" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isBankruptcy" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isReturnedMail" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isNew" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerTypeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Preferences" type="tns:PlayerPreference" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addresses" type="tns:ArrayOfPlayerAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phones" type="tns:ArrayOfPlayerPhone" />
+          <s:element minOccurs="0" maxOccurs="1" name="Emails" type="tns:ArrayOfPlayerEmail" />
+          <s:element minOccurs="1" maxOccurs="1" name="isEncryptedPicture" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PicturePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Identification" type="tns:ArrayOfPlayerIdentification" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastActionDtm" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLocnCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCardIn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PinSetDtm" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastTripStartTranCodeGamingDt" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTemplate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPictureTaken" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="NickName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPlayerAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerAddress" nillable="true" type="tns:PlayerAddress" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPlayerPhone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerPhone" nillable="true" type="tns:PlayerPhone" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPlayerEmail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerEmail" nillable="true" type="tns:PlayerEmail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPlayerIdentification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerIdentification" nillable="true" type="tns:PlayerIdentification" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerPrintData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerPrintDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="templateAcct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="templatePlayerID" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="player" type="tns:PlayerBase" />
+            <s:element minOccurs="0" maxOccurs="1" name="Addresses" type="tns:ArrayOfPlayerAddress" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDs" type="tns:ArrayOfPlayerIdentification" />
+            <s:element minOccurs="0" maxOccurs="1" name="Photos" type="tns:ArrayOfPlayerPicture" />
+            <s:element minOccurs="0" maxOccurs="1" name="Emails" type="tns:ArrayOfPlayerEmail" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phones" type="tns:ArrayOfPlayerPhone" />
+            <s:element minOccurs="0" maxOccurs="1" name="preference" type="tns:PlayerPreference" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Acct" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GivenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Suffix" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClubState" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeddingDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MgmtRating" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Marital" nillable="true" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="height" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="eyes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hair" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Gender" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isPINLocked" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isBanned" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isCredit" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isBankruptcy" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isReturnedMail" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isNew" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrimaryHost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecondaryHost" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreatePlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerPrizes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="prizeCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="prizeId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="reqTagcode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reqTagId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="attTagcode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="attTagId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="detachTagCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="detachTagId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="validDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isVoid" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerPrizesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfPlayerPrize" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayerPrize">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerPrize" nillable="true" type="tns:PlayerPrize" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerPrize">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PrizeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrizeDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrizeIsActive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrizeAttachTagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrizeDetachTagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrizeRequiredTagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isVoid" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="voidTranID" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkedPrizeCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValidThroughDtm" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EffectiveDtm" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerBase" type="tns:PlayerBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerPicture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="picture" type="tns:PlayerPicture" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerPictureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerPIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerPINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnlockPlayerPin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="verifyLockPin" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnlockPlayerPinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeAward">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerid" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="awardType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prizeCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="prizeId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Qty" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="authAwarded" nillable="true" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="authUsed" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeAwardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TranID" nillable="true" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SettleAward">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tranID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Qty" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AwardUsed" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SettleAwardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="settleTranID" nillable="true" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VoidAward">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="awardtranID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VoidAwardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="voidTranID" nillable="true" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerid" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tagCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tagId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePlayerTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TagCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tagId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePlayerTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerid" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="arrivalDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="depatureDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isLookUpEventDate" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePlayerEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="acct" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePlayerEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CloseTokenResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIDTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIDTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfIDType" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIDType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IDType" nillable="true" type="tns:IDType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IDType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRequiredExpiration" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddPrizeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPrize" />
+  </wsdl:message>
+  <wsdl:message name="AddPrizeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPrizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrizeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePrize" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrizeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePrizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTagSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTag" />
+  </wsdl:message>
+  <wsdl:message name="AddTagSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTagSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTag" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTagSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateGroup" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupEventSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGroupEvent" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupEventSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGroupEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupEventSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateGroupEvent" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupEventSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateGroupEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRatingSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRating" />
+  </wsdl:message>
+  <wsdl:message name="AddRatingSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRatingSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRating" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRatingSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerMemoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPlayerMemo" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerMemoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPlayerMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BanPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:BanPlayer" />
+  </wsdl:message>
+  <wsdl:message name="BanPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:BanPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAwardAdjustSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthorizeAwardAdjust" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAwardAdjustSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorizeAwardAdjustResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePlayerPINSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidatePlayerPIN" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePlayerPINSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatePlayerPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerType" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerNotes" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAddressTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAddressTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPhoneTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPhoneTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetPhoneTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPhoneTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmailTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmailTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPictureTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPictureTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetPictureTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPictureTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerBalancesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerBalances" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerBalancesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerBalancesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerTagsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerTags" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerTagsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerHostsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerHosts" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerHostsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerHostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerNotes" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerPicturesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerPictures" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerPicturesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerPicturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerPreferencesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerPreferences" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerPreferencesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerPreferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerAddress" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerEmail" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdjustPlayerBucketBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:AdjustPlayerBucketBalance" />
+  </wsdl:message>
+  <wsdl:message name="AdjustPlayerBucketBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:AdjustPlayerBucketBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerHostSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerHost" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerHostSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerHostResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerPhone" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerIdentificationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerIdentification" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerIdentificationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerIdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeRoleCodeListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeRoleCodeList" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeRoleCodeListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeRoleCodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyEmployeeLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyEmployeeLogin" />
+  </wsdl:message>
+  <wsdl:message name="VerifyEmployeeLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyEmployeeLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyEmployeeSecuritySoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyEmployeeSecurity" />
+  </wsdl:message>
+  <wsdl:message name="VerifyEmployeeSecuritySoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyEmployeeSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeEmployeePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeEmployeePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangeEmployeePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeEmployeePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClubStatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClubStates" />
+  </wsdl:message>
+  <wsdl:message name="GetClubStatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClubStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerTemplates" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTagsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTags" />
+  </wsdl:message>
+  <wsdl:message name="GetTagsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrizesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrizes" />
+  </wsdl:message>
+  <wsdl:message name="GetPrizesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrizesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLanguagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLanguages" />
+  </wsdl:message>
+  <wsdl:message name="GetLanguagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayers" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerPrintDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerPrintData" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerPrintDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerPrintDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePlayer" />
+  </wsdl:message>
+  <wsdl:message name="CreatePlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerPrizesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerPrizes" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerPrizesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerPrizesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayer" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerPictureSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerPicture" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerPictureSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerPINSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerPIN" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerPINSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnlockPlayerPinSoapIn">
+    <wsdl:part name="parameters" element="tns:UnlockPlayerPin" />
+  </wsdl:message>
+  <wsdl:message name="UnlockPlayerPinSoapOut">
+    <wsdl:part name="parameters" element="tns:UnlockPlayerPinResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAwardSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthorizeAward" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAwardSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorizeAwardResponse" />
+  </wsdl:message>
+  <wsdl:message name="SettleAwardSoapIn">
+    <wsdl:part name="parameters" element="tns:SettleAward" />
+  </wsdl:message>
+  <wsdl:message name="SettleAwardSoapOut">
+    <wsdl:part name="parameters" element="tns:SettleAwardResponse" />
+  </wsdl:message>
+  <wsdl:message name="VoidAwardSoapIn">
+    <wsdl:part name="parameters" element="tns:VoidAward" />
+  </wsdl:message>
+  <wsdl:message name="VoidAwardSoapOut">
+    <wsdl:part name="parameters" element="tns:VoidAwardResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerTagSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPlayerTag" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerTagSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPlayerTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePlayerTagSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePlayerTag" />
+  </wsdl:message>
+  <wsdl:message name="RemovePlayerTagSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePlayerTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerEventSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPlayerEvent" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerEventSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPlayerEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePlayerEventSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePlayerEvent" />
+  </wsdl:message>
+  <wsdl:message name="RemovePlayerEventSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePlayerEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseToken" />
+  </wsdl:message>
+  <wsdl:message name="CloseTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIDTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIDTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetIDTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIDTypesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BallyPechangaServiceSoap">
+    <wsdl:operation name="AddPrize">
+      <wsdl:input message="tns:AddPrizeSoapIn" />
+      <wsdl:output message="tns:AddPrizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrize">
+      <wsdl:input message="tns:UpdatePrizeSoapIn" />
+      <wsdl:output message="tns:UpdatePrizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTag">
+      <wsdl:input message="tns:AddTagSoapIn" />
+      <wsdl:output message="tns:AddTagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTag">
+      <wsdl:input message="tns:UpdateTagSoapIn" />
+      <wsdl:output message="tns:UpdateTagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:input message="tns:AddGroupSoapIn" />
+      <wsdl:output message="tns:AddGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <wsdl:input message="tns:UpdateGroupSoapIn" />
+      <wsdl:output message="tns:UpdateGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupEvent">
+      <wsdl:input message="tns:AddGroupEventSoapIn" />
+      <wsdl:output message="tns:AddGroupEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroupEvent">
+      <wsdl:input message="tns:UpdateGroupEventSoapIn" />
+      <wsdl:output message="tns:UpdateGroupEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRating">
+      <wsdl:input message="tns:AddRatingSoapIn" />
+      <wsdl:output message="tns:AddRatingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRating">
+      <wsdl:input message="tns:UpdateRatingSoapIn" />
+      <wsdl:output message="tns:UpdateRatingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerMemo">
+      <wsdl:input message="tns:AddPlayerMemoSoapIn" />
+      <wsdl:output message="tns:AddPlayerMemoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BanPlayer">
+      <wsdl:input message="tns:BanPlayerSoapIn" />
+      <wsdl:output message="tns:BanPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAwardAdjust">
+      <wsdl:input message="tns:AuthorizeAwardAdjustSoapIn" />
+      <wsdl:output message="tns:AuthorizeAwardAdjustSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePlayerPIN">
+      <wsdl:input message="tns:ValidatePlayerPINSoapIn" />
+      <wsdl:output message="tns:ValidatePlayerPINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerType">
+      <wsdl:input message="tns:UpdatePlayerTypeSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerNotes">
+      <wsdl:input message="tns:UpdatePlayerNotesSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressTypes">
+      <wsdl:input message="tns:GetAddressTypesSoapIn" />
+      <wsdl:output message="tns:GetAddressTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneTypes">
+      <wsdl:input message="tns:GetPhoneTypesSoapIn" />
+      <wsdl:output message="tns:GetPhoneTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailTypes">
+      <wsdl:input message="tns:GetEmailTypesSoapIn" />
+      <wsdl:output message="tns:GetEmailTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPictureTypes">
+      <wsdl:input message="tns:GetPictureTypesSoapIn" />
+      <wsdl:output message="tns:GetPictureTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerBalances">
+      <wsdl:input message="tns:GetPlayerBalancesSoapIn" />
+      <wsdl:output message="tns:GetPlayerBalancesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerGroups">
+      <wsdl:input message="tns:GetPlayerGroupsSoapIn" />
+      <wsdl:output message="tns:GetPlayerGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTags">
+      <wsdl:input message="tns:GetPlayerTagsSoapIn" />
+      <wsdl:output message="tns:GetPlayerTagsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerHosts">
+      <wsdl:input message="tns:GetPlayerHostsSoapIn" />
+      <wsdl:output message="tns:GetPlayerHostsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerNotes">
+      <wsdl:input message="tns:GetPlayerNotesSoapIn" />
+      <wsdl:output message="tns:GetPlayerNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPictures">
+      <wsdl:input message="tns:GetPlayerPicturesSoapIn" />
+      <wsdl:output message="tns:GetPlayerPicturesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPreferences">
+      <wsdl:input message="tns:UpdatePlayerPreferencesSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerPreferencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerAddress">
+      <wsdl:input message="tns:UpdatePlayerAddressSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerEmail">
+      <wsdl:input message="tns:UpdatePlayerEmailSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdjustPlayerBucketBalance">
+      <wsdl:input message="tns:AdjustPlayerBucketBalanceSoapIn" />
+      <wsdl:output message="tns:AdjustPlayerBucketBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerHost">
+      <wsdl:input message="tns:UpdatePlayerHostSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerHostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPhone">
+      <wsdl:input message="tns:UpdatePlayerPhoneSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerIdentification">
+      <wsdl:input message="tns:UpdatePlayerIdentificationSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerIdentificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeRoleCodeList">
+      <wsdl:input message="tns:GetEmployeeRoleCodeListSoapIn" />
+      <wsdl:output message="tns:GetEmployeeRoleCodeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmployeeLogin">
+      <wsdl:input message="tns:VerifyEmployeeLoginSoapIn" />
+      <wsdl:output message="tns:VerifyEmployeeLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmployeeSecurity">
+      <wsdl:input message="tns:VerifyEmployeeSecuritySoapIn" />
+      <wsdl:output message="tns:VerifyEmployeeSecuritySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeEmployeePassword">
+      <wsdl:input message="tns:ChangeEmployeePasswordSoapIn" />
+      <wsdl:output message="tns:ChangeEmployeePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input message="tns:GetCountriesSoapIn" />
+      <wsdl:output message="tns:GetCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClubStates">
+      <wsdl:input message="tns:GetClubStatesSoapIn" />
+      <wsdl:output message="tns:GetClubStatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTemplates">
+      <wsdl:input message="tns:GetPlayerTemplatesSoapIn" />
+      <wsdl:output message="tns:GetPlayerTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input message="tns:GetGroupsSoapIn" />
+      <wsdl:output message="tns:GetGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTags">
+      <wsdl:input message="tns:GetTagsSoapIn" />
+      <wsdl:output message="tns:GetTagsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrizes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Used to retrieve prizes based on the prize code</wsdl:documentation>
+      <wsdl:input message="tns:GetPrizesSoapIn" />
+      <wsdl:output message="tns:GetPrizesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Used to retrieve the playertype</wsdl:documentation>
+      <wsdl:input message="tns:GetPlayerTypesSoapIn" />
+      <wsdl:output message="tns:GetPlayerTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves all the languaages names in the result</wsdl:documentation>
+      <wsdl:input message="tns:GetLanguagesSoapIn" />
+      <wsdl:output message="tns:GetLanguagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayers">
+      <wsdl:input message="tns:GetPlayersSoapIn" />
+      <wsdl:output message="tns:GetPlayersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPrintData">
+      <wsdl:input message="tns:GetPlayerPrintDataSoapIn" />
+      <wsdl:output message="tns:GetPlayerPrintDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlayer">
+      <wsdl:input message="tns:CreatePlayerSoapIn" />
+      <wsdl:output message="tns:CreatePlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPrizes">
+      <wsdl:input message="tns:GetPlayerPrizesSoapIn" />
+      <wsdl:output message="tns:GetPlayerPrizesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayer">
+      <wsdl:input message="tns:UpdatePlayerSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPicture">
+      <wsdl:input message="tns:UpdatePlayerPictureSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerPictureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPIN">
+      <wsdl:input message="tns:UpdatePlayerPINSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerPINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockPlayerPin">
+      <wsdl:input message="tns:UnlockPlayerPinSoapIn" />
+      <wsdl:output message="tns:UnlockPlayerPinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAward">
+      <wsdl:input message="tns:AuthorizeAwardSoapIn" />
+      <wsdl:output message="tns:AuthorizeAwardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettleAward">
+      <wsdl:input message="tns:SettleAwardSoapIn" />
+      <wsdl:output message="tns:SettleAwardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidAward">
+      <wsdl:input message="tns:VoidAwardSoapIn" />
+      <wsdl:output message="tns:VoidAwardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerTag">
+      <wsdl:input message="tns:AddPlayerTagSoapIn" />
+      <wsdl:output message="tns:AddPlayerTagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerTag">
+      <wsdl:input message="tns:RemovePlayerTagSoapIn" />
+      <wsdl:output message="tns:RemovePlayerTagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerEvent">
+      <wsdl:input message="tns:AddPlayerEventSoapIn" />
+      <wsdl:output message="tns:AddPlayerEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerEvent">
+      <wsdl:input message="tns:RemovePlayerEventSoapIn" />
+      <wsdl:output message="tns:RemovePlayerEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseToken">
+      <wsdl:input message="tns:CloseTokenSoapIn" />
+      <wsdl:output message="tns:CloseTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIDTypes">
+      <wsdl:input message="tns:GetIDTypesSoapIn" />
+      <wsdl:output message="tns:GetIDTypesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BallyPechangaServiceSoap" type="tns:BallyPechangaServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPrize">
+      <soap:operation soapAction="http://tempuri.org/AddPrize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrize">
+      <soap:operation soapAction="http://tempuri.org/UpdatePrize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTag">
+      <soap:operation soapAction="http://tempuri.org/AddTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTag">
+      <soap:operation soapAction="http://tempuri.org/UpdateTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap:operation soapAction="http://tempuri.org/AddGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <soap:operation soapAction="http://tempuri.org/UpdateGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupEvent">
+      <soap:operation soapAction="http://tempuri.org/AddGroupEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroupEvent">
+      <soap:operation soapAction="http://tempuri.org/UpdateGroupEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRating">
+      <soap:operation soapAction="http://tempuri.org/AddRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRating">
+      <soap:operation soapAction="http://tempuri.org/UpdateRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerMemo">
+      <soap:operation soapAction="http://tempuri.org/AddPlayerMemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BanPlayer">
+      <soap:operation soapAction="http://tempuri.org/BanPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAwardAdjust">
+      <soap:operation soapAction="http://tempuri.org/AuthorizeAwardAdjust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePlayerPIN">
+      <soap:operation soapAction="http://tempuri.org/ValidatePlayerPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerType">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerNotes">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressTypes">
+      <soap:operation soapAction="http://tempuri.org/GetAddressTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneTypes">
+      <soap:operation soapAction="http://tempuri.org/GetPhoneTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailTypes">
+      <soap:operation soapAction="http://tempuri.org/GetEmailTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPictureTypes">
+      <soap:operation soapAction="http://tempuri.org/GetPictureTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerBalances">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerBalances" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerGroups">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTags">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerHosts">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerHosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerNotes">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPictures">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerPictures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPreferences">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerPreferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerAddress">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerEmail">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustPlayerBucketBalance">
+      <soap:operation soapAction="http://tempuri.org/AdjustPlayerBucketBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerHost">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerHost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPhone">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerIdentification">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerIdentification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeRoleCodeList">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeRoleCodeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmployeeLogin">
+      <soap:operation soapAction="http://tempuri.org/VerifyEmployeeLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmployeeSecurity">
+      <soap:operation soapAction="http://tempuri.org/VerifyEmployeeSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeEmployeePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangeEmployeePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="http://tempuri.org/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClubStates">
+      <soap:operation soapAction="http://tempuri.org/GetClubStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTemplates">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap:operation soapAction="http://tempuri.org/GetGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTags">
+      <soap:operation soapAction="http://tempuri.org/GetTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrizes">
+      <soap:operation soapAction="http://tempuri.org/GetPrizes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTypes">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <soap:operation soapAction="http://tempuri.org/GetLanguages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayers">
+      <soap:operation soapAction="http://tempuri.org/GetPlayers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPrintData">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerPrintData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlayer">
+      <soap:operation soapAction="http://tempuri.org/CreatePlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPrizes">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerPrizes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayer">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPicture">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPIN">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlayerPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockPlayerPin">
+      <soap:operation soapAction="http://tempuri.org/UnlockPlayerPin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAward">
+      <soap:operation soapAction="http://tempuri.org/AuthorizeAward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettleAward">
+      <soap:operation soapAction="http://tempuri.org/SettleAward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidAward">
+      <soap:operation soapAction="http://tempuri.org/VoidAward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerTag">
+      <soap:operation soapAction="http://tempuri.org/AddPlayerTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerTag">
+      <soap:operation soapAction="http://tempuri.org/RemovePlayerTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerEvent">
+      <soap:operation soapAction="http://tempuri.org/AddPlayerEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerEvent">
+      <soap:operation soapAction="http://tempuri.org/RemovePlayerEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseToken">
+      <soap:operation soapAction="http://tempuri.org/CloseToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIDTypes">
+      <soap:operation soapAction="http://tempuri.org/GetIDTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BallyPechangaServiceSoap12" type="tns:BallyPechangaServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPrize">
+      <soap12:operation soapAction="http://tempuri.org/AddPrize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrize">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePrize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTag">
+      <soap12:operation soapAction="http://tempuri.org/AddTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTag">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap12:operation soapAction="http://tempuri.org/AddGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <soap12:operation soapAction="http://tempuri.org/UpdateGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupEvent">
+      <soap12:operation soapAction="http://tempuri.org/AddGroupEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroupEvent">
+      <soap12:operation soapAction="http://tempuri.org/UpdateGroupEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRating">
+      <soap12:operation soapAction="http://tempuri.org/AddRating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRating">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerMemo">
+      <soap12:operation soapAction="http://tempuri.org/AddPlayerMemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BanPlayer">
+      <soap12:operation soapAction="http://tempuri.org/BanPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAwardAdjust">
+      <soap12:operation soapAction="http://tempuri.org/AuthorizeAwardAdjust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePlayerPIN">
+      <soap12:operation soapAction="http://tempuri.org/ValidatePlayerPIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerType">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerNotes">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetAddressTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetPhoneTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetEmailTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPictureTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetPictureTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerBalances">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerBalances" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerGroups">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTags">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerTags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerHosts">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerHosts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerNotes">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPictures">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerPictures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPreferences">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerPreferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerAddress">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerEmail">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustPlayerBucketBalance">
+      <soap12:operation soapAction="http://tempuri.org/AdjustPlayerBucketBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerHost">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerHost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPhone">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerIdentification">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerIdentification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeRoleCodeList">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeRoleCodeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmployeeLogin">
+      <soap12:operation soapAction="http://tempuri.org/VerifyEmployeeLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmployeeSecurity">
+      <soap12:operation soapAction="http://tempuri.org/VerifyEmployeeSecurity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeEmployeePassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangeEmployeePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap12:operation soapAction="http://tempuri.org/GetCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClubStates">
+      <soap12:operation soapAction="http://tempuri.org/GetClubStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTemplates">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap12:operation soapAction="http://tempuri.org/GetGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTags">
+      <soap12:operation soapAction="http://tempuri.org/GetTags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrizes">
+      <soap12:operation soapAction="http://tempuri.org/GetPrizes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <soap12:operation soapAction="http://tempuri.org/GetLanguages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayers">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPrintData">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerPrintData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlayer">
+      <soap12:operation soapAction="http://tempuri.org/CreatePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerPrizes">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerPrizes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayer">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPicture">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerPicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerPIN">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlayerPIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockPlayerPin">
+      <soap12:operation soapAction="http://tempuri.org/UnlockPlayerPin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAward">
+      <soap12:operation soapAction="http://tempuri.org/AuthorizeAward" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettleAward">
+      <soap12:operation soapAction="http://tempuri.org/SettleAward" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidAward">
+      <soap12:operation soapAction="http://tempuri.org/VoidAward" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerTag">
+      <soap12:operation soapAction="http://tempuri.org/AddPlayerTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerTag">
+      <soap12:operation soapAction="http://tempuri.org/RemovePlayerTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerEvent">
+      <soap12:operation soapAction="http://tempuri.org/AddPlayerEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerEvent">
+      <soap12:operation soapAction="http://tempuri.org/RemovePlayerEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseToken">
+      <soap12:operation soapAction="http://tempuri.org/CloseToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIDTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetIDTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BallyPechangaService">
+    <wsdl:port name="BallyPechangaServiceSoap" binding="tns:BallyPechangaServiceSoap">
+      <soap:address location="http://localhost:65411/BallyPechangaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BallyPechangaServiceSoap12" binding="tns:BallyPechangaServiceSoap12">
+      <soap12:address location="http://localhost:65411/BallyPechangaService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
